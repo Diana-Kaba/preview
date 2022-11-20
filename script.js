@@ -5,6 +5,8 @@ let shortStr = "Lorem ipsum dolor.";
 function preview(str, n) {
   if (str.length > n) {
     str = str.slice(0, n);
+    let k = str.lastIndexOf(" ");
+    str = str.slice(0, k);
     return str + "...";
   }
   return str;
