@@ -5,12 +5,14 @@ let shortStr = "Lorem ipsum dolor.";
 function preview(str, n) {
   if (str.length > n) {
     str = str.slice(0, n);
-    let k = str.lastIndexOf(" ");
-    str = str.slice(0, k);
+    if (str.charAt(n) != " ") {
+      let k = str.lastIndexOf(" ");
+      str = str.slice(0, k);
+    }
     return str + "...";
   }
   return str;
 }
 
 document.write(preview(shortStr, 20) + "<br>");
-document.write(preview(longStr, 20));
+document.write(preview(longStr, 27));
